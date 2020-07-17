@@ -1,0 +1,119 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: rgb(210, 210, 210);
+  color:#CCCCCC; 
+}
+
+p {
+  color: rgb(46, 46, 46);
+}
+
+canvas {
+  display: block;
+}
+
+#alpha_vid {
+  position: absolute;
+  /* top:0px; */
+  z-index: 10;
+}
+
+#vid_div {
+  display: none;
+}
+
+.div_button {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#buttonA {
+  z-index: 20;
+  display: inline-block;
+}
+
+#c1 {
+  display: none;
+}
+
+#compiled {
+  margin-top: 10px;
+  width: 600px;
+  height: 600px;
+} 
+
+#myP5canvas1 {
+  position: absolute ;
+  top: 10px;   left: 50%;
+  width: 600px; height: 600px;
+  transform: translate(-50%, -0%);
+}
+
+#shuffleNo {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+}
+
+#paintType {
+  position: absolute;
+  top: 45px;
+  left: 0px;
+}
+
+.inputWrapper {
+  position: absolute;
+  top: 45px;
+  text-align: center;
+  width: 130px;
+}
+
+input[type="file"] {
+  position: absolute;
+  z-index: -1;
+  font-size: 14px;
+  color: #b8b8b8;
+}
+
+label {
+  border: 2px solid red;
+}
+
+#inputButton {
+  display: inline-block;
+  padding: 10px 0px;
+  background-color: #8abeb7;
+}
+
+#inputButton:hover {
+  background-color: #6ebbb1;
+}
+
+#reset {
+  background-color: #cf8088;
+}
+
+#reset:hover {
+  background-color: #c4515c;
+}
+
+.button {
+  margin-left: 0;
+  margin-right: 0;
+  border: 1px solid #506070;
+  padding: 10px 10px;
+  width: 130px;
+  cursor: pointer;
+  background-color: #bccece;
+  font-size: 14px;
+  color: #242b38;
+}
+
+.button.toggled, .button.toggled:hover {
+  background-color: #81a2be;
+}
+
+.button:hover {
+  background-color: #81a2be;
+}

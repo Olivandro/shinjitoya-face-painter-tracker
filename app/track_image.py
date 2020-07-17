@@ -25,9 +25,7 @@ def webcam_main():
     else:
         print("input model format error !")
         return
-    
-
-
+       
     faceboxes = mark_detector.extract_cnn_facebox(frame)
     print(faceboxes)
         
