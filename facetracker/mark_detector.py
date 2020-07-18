@@ -1,7 +1,7 @@
 import numpy as np
 import tensorflow as tf
 
-from app.utils import smoothL1, relu6, DepthwiseConv2D, mask_weights
+from facetracker.utils import smoothL1, relu6, DepthwiseConv2D, mask_weights
 import cv2
 
 # Model File Path #

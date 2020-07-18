@@ -1,15 +1,12 @@
 import sys
-sys.path.append("/Users/Olivandro/Sites/face_landmark_factory-master")
-
-from multiprocessing import Process, Queue
-import numpy as np
 import cv2
-from app.mark_detector import MarkDetector
+from mark_detector import MarkDetector
 import time
 import os
+
+sys.path.append("/Users/Olivandro/Sites/face_landmark_factory-master")
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"]="0,1"
-
 
 def webcam_main():
     print("Camera sensor warming up...")
@@ -72,7 +69,7 @@ def webcam_main():
     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-#    current_model = "../model/facial_landmark_cnn.h5"
+    # current_model = "../model/facial_landmark_cnn.h5"
     current_model = "/Users/Olivandro/Sites/face_landmark_factory-master/model/facial_landmark_SqueezeNet.pb"
     # VIDEO_PATH = "/Users/Olivandro/Sites/face_landmark_factory-master/data/IU.avi"
 

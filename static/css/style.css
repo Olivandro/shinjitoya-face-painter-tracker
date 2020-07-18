@@ -117,3 +117,17 @@ label {
 .button:hover {
   background-color: #81a2be;
 }
+
+.stream-container {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  overflow: hidden;
+  margin: 0 auto;
+
+}
+#stream-feed {
+  left: 50% !important;
+  margin-left: -700px;
+  position: absolute;
+}

@@ -1,17 +1,20 @@
 import sys
+import cv2
+from facetracker.mark_detector import MarkDetector
+import time
+
 sys.path.append("/Users/Olivandro/Sites/face_landmark_factory-master")
 
-from multiprocessing import Process, Queue
-import numpy as np
-import cv2
-from app.mark_detector import MarkDetector
-import time
-import os
 
+# Import nn model
+current_model = "/Users/Olivandro/Sites/face_landmark_factory-master/model/facial_landmark_SqueezeNet.pb"
+
+VIDEO_PATH = 0
+CNN_INPUT_SIZE = 64
 
 def webcam_main():
-    print("Camera sensor warming up...")
-    cv2.namedWindow('face landmarks', cv2.WINDOW_NORMAL)
+    # print("Camera sensor warming up...")
+    # cv2.namedWindow('face landmarks', cv2.WINDOW_NORMAL)
     vs = cv2.VideoCapture(VIDEO_PATH)
     time.sleep(2.0)
 
@@ -58,7 +61,7 @@ def webcam_main():
         fps_time = (cv2.getTickCount() - start)/cv2.getTickFrequency()
         cv2.putText(frame, '%.1ffps'%(1/fps_time), (frame.shape[1]-65,15), cv2.FONT_HERSHEY_DUPLEX, 0.5, (0,255,0))
         # show the frame
-        cv2.imshow("face landmarks", frame)
+        # cv2.imshow("face landmarks", frame)
         # writer.write(frame)
         key = cv2.waitKey(1)
 
@@ -68,15 +71,3 @@ def webcam_main():
 
     # do a bit of cleanup
     cv2.destroyAllWindows()
-
-if __name__ == "__main__":
-#    current_model = "../model/facial_landmark_cnn.h5"
-    current_model = "/Users/Olivandro/Sites/face_landmark_factory-master/model/facial_landmark_SqueezeNet.pb"
-    # VIDEO_PATH = "/Users/Olivandro/Sites/face_landmark_factory-master/data/IU.avi"
-
-    # the path below allow for this script to track videos. Setting the VIDEO_PATH to 0 will activate the webcam.
-    # VIDEO_PATH = "/Users/Olivandro/Sites/face_landmark_factory-master/data/Screen-Shot_2018-11-30_22.00.30.png"
-    VIDEO_PATH = 0
-
-    CNN_INPUT_SIZE = 64
-    webcam_main()

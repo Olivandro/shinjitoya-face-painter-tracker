@@ -2,50 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <script src="{{ url_for('static',filename='/js/libs/p5_10_2/p5_10_2.js') }}"></script>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/css/style.css') }}">
+    <script src="{{ url_for('static',filename='js/libs/p5_10_2/p5_10_2.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
   </head>
   <!-- on load the program will as default switch to a medium brush size of 38 -->
   <body onload="switchMedBrush()">
 
-    <center>
-      <div id="compiled">
-        <div id="vid_div">
-          <video id="video" src="{{ url_for('static',filename='media/video sml.mp4') }}" controls loop playsinline >
-        </div>
-    
-        <canvas id="c1" width="600" height="600"></canvas>
-    
-        <div id="alpha_vid">
-          <canvas id="c2" width="600" height="600"></canvas>
-        </div>
+    {% block content %}{% endblock %}
 
-      </div>
-    </center>
-
-    <div class="div_button">
-      <button class="button" id="buttonA" onclick="enableAutoplay()" type="button">3D Paint
-      <button class="button toggled" id="brushSml">Small Brush
-      <button class="button" id="brushMed">Medium Brush
-      <button class="button toggled" id="brushType1" onclick="switchBrushType(0)">Brush 1
-      <button class="button" id="brushType2" onclick="switchBrushType(1)">Brush 2
-      <button class="button" id="reset" onclick="resetSketch()">Reset
-    </div>
-
-    <p id="shuffleNo"></p>
-    <!-- <p id="paintType">Brushtype: 1</p> -->
-
-    <div class="inputWrapper">
-      <label id="inputButton" class="button" for="fileInput">Open Image</label>
-      <input class="button" id="fileInput" type="file" value="Open Image">
-    </div>
-
-    <!-- loading of all program scripts -->
-    <script src="{{ url_for('static',filename='/js/main.js') }}"></script>
-    <script src="{{ url_for('static',filename='/js/methods.js') }}"></script>
-    <script src="{{ url_for('static',filename='/js/keybindings.js') }}"></script>
-    <script src="{{ url_for('static',filename='/js/processor.js') }}"></script>
-    <script src="{{ url_for('static',filename='/js/openImage.js') }}"></script>
-
-</body>
+  </body>
 </html>

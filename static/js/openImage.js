@@ -27,7 +27,7 @@ function onFileChange(e, files) {
 
     };
 
-    img.src = './img/' + files[0].name;
+    img.src = '/static/img/' + files[0].name;
 
     // the following lines are never executed but the max width and height should be implemented above
     var reader = new FileReader(files[0]);
