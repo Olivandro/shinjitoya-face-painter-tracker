@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block content %}
+<center>
+    <div id="compiled">
+        <div class="stream-container">
+            <img id="stream-feed" src="{{ url_for('clean_feed') }}">
+        </div>
+    </div>
+  </center>
+
+  <div class="div_button">
+    <button class="button" id="face-tracker" onclick="" type="button">Toggle mesh</button>
+    <button class="button" id="capture" onclick="">Take image</button>
+  </div>
+
+
+  <!-- loading of all program scripts -->
+  <script>
+
+    function toggleMesh()
+    {
+        var toggle = document.getElementById('stream-feed');    
+        console.log(toggle.src);
+
+        // Stream source has to be hard coded to insure js can toggle between clean and mesh video feeds
+        if (toggle.src == 'http://127.0.0.1:5000/clean_feed') {
+            console.log('bang-1');
+            toggle.src = 'http://127.0.0.1:5000/mesh_feed';
+                
+        } else {
+            console.log('bang-2');
+            toggle.src = 'http://127.0.0.1:5000/clean_feed';
+        } 
+    }
+
+  </script>
+
+{% endblock content %}

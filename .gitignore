@@ -113,3 +113,5 @@ celerybeat-schedule
 
 # Data folders
 data/*
+
+static/temp-images/*

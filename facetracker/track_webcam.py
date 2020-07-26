@@ -61,7 +61,7 @@ def webcam_main():
         fps_time = (cv2.getTickCount() - start)/cv2.getTickFrequency()
         cv2.putText(frame, '%.1ffps'%(1/fps_time), (frame.shape[1]-65,15), cv2.FONT_HERSHEY_DUPLEX, 0.5, (0,255,0))
         # show the frame
-        # cv2.imshow("face landmarks", frame)
+        cv2.imshow("face landmarks", frame)
         # writer.write(frame)
         key = cv2.waitKey(1)
 

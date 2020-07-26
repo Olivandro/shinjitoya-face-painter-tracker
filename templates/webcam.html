@@ -3,29 +3,27 @@
 <center>
     <div id="compiled">
         <div class="stream-container">
-            <img id="stream-feed" src="{{ url_for('mesh_feed') }}">
+            <img id="stream-feed" src="{{ url_for('clean_feed') }}">
+            <!-- Preview of screenshot -->
+            <canvas id="canvas" width="600" height="600" hidden="true"></canvas>
         </div>
     </div>
   </center>
 
   <div class="div_button">
-    <button class="button" id="face-tracker" onclick="" type="button">Toggle mesh</button>
-    <button class="button" id="capture" onclick="captureImage()">Take image</button>
+    <button class="button" id="face-tracker" type="button">Toggle mesh</button>
+    <button class="button" id="capture">Take image</button>
+    <button class="button" id="cancel">Cancel</button>
   </div>
 
-
   <!-- loading of all program scripts -->
+  <script type="text/javascript" src="{{ url_for('static',filename='js/captureImg.js') }}"></script>
   <script>
-    //   Both button will be constructed as fetch requests to interact with face-tracker backend
-    function captureImage()
-    {
+    const cancel = document.getElementById('cancel');
 
-    }
-
-    function toggleMesh()
-    {
-
-    }
+    cancel.addEventListener('click', function() {
+      window.location.href = 'http://0.0.0.0:5000/'
+    });
   </script>
 
 {% endblock content %}
