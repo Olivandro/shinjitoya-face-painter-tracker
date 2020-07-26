@@ -1,0 +1,1 @@
+const appStorage = window.sessionStorage;

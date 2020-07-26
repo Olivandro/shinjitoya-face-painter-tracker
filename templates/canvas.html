@@ -31,6 +31,7 @@
     <!-- <label id="inputButton" class="button" for="fileInput">Open Image</label>
     <input class="button" id="fileInput" type="file" value="Open Image"> -->
     <button class="button" id="buttonWeb" onclick="" type="button">Webcam</button>
+    <button class="button" id="cancel">Cancel</button>
   </div>
 
   <!-- loading of all program scripts -->
@@ -38,18 +39,12 @@
   <script src="{{ url_for('static',filename='js/keybindings.js') }}"></script>
   <script src="{{ url_for('static',filename='js/processor.js') }}"></script>
 
+
   <!-- Onload script -->
   <script>
     const anchourWeb = document.getElementById('buttonWeb');
-
-    anchourWeb.addEventListener('click', function() {
-      window.location.href = 'http://0.0.0.0:5000/webcam'
-    });
-
-  </script>
-  <script>
-    
-    var canvasInput = window.localStorage.getItem('canvasPath')
+    const canvasInput = appStorage.getItem('canvasPath');
+    const cancel = document.getElementById('cancel')
     let shuffleButton;    // the button used for shuffling
     let face;             // the face image
     let mask1;            // the mask canvas
@@ -61,7 +56,7 @@
     let maskBrush;        // the 'brush' we'll draw on the mask with (a black circle)
     let sketch;           // the sketch, which is an html canvas elem
     let brushType = 0;    // current type of brush 
-    
+
     function preload () {
         // load in all the images
         face = loadImage(canvasInput);
@@ -158,7 +153,15 @@
         // draw the face on the "original" sketch canvas, which places it below the 2 mask canvases
         image(face, 0, 0, width, height);
     }
-  
+
+    anchourWeb.addEventListener('click', function() {
+      window.location.href = 'http://0.0.0.0:5000/webcam'
+    });
+
+    cancel.addEventListener('click', function() {
+      window.location.href = 'http://0.0.0.0:5000/'
+    });
+
   </script>
   
   {% endblock content %}
