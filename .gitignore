@@ -113,6 +113,10 @@ celerybeat-schedule
 
 # Data folders
 data/*
-log/*
+log/facial_landmark_cnn/*
+log/facial_landmark_MobileNet/*
+log/facial_landmark_NASNetMobile/*
+log/facial_landmark_ResNeXt50/*
+log/facial_landmark_SqueezeNet/*
 
 static/temp-images/*
