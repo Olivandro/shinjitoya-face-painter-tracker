@@ -1,6 +1,5 @@
 import sys
 import cv2
-# import datetime
 from facetracker.mark_detector import MarkDetector
 
 
