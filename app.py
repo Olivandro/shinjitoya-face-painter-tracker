@@ -1,13 +1,13 @@
 import os
 from flask import Flask, render_template, Response, jsonify, flash, request, redirect, url_for
-# from flask_cors import CORS
+from flask_cors import CORS
 from facetracker.Webcam import Webcam
 
 UPLOAD_FOLDER = 'static/temp-images/'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'JPG', 'JPEG'])
 
 app = Flask(__name__, static_url_path='/static')
-# CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
